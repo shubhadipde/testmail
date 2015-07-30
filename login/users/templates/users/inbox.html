@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		{% load app_filters %}
+	{% include 'global/header.html' %}
+
+		<h2>Inbox</h2>
+		<table border="1">
+			<tr>
+			<th>body</th>
+			<th>to</th>
+			<th>image</th>
+			</tr>
+		{% for msg in messages %}
+			<!--{{msg.body|truncatechars:5}}<br />-->
+			<tr>
+			<td>{{msg.body}}</td> 
+			<td>{{msg.frm}}</td>
+			<td>
+			<img src="/media/{{msg.to|display_image}}" ></td>
+			</tr>
+		{% endfor %}
+
+	</body>
+</html>

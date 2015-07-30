@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		{% include 'global/header.html' %}
+
+
+		<h2>Send e-mail</h2>
+
+		<form action="{% url 'send_mail' %}" method="post">
+			{% csrf_token %}
+			{{ form.to.errors }}<br />
+			To:<br>
+			{{ form.to }}<br>
+			{{ form.subject.errors }}<br />
+			Subject:<br>
+			{{ form.subject }}<br><br>
+			{{ form.message.errors }}<br />
+			Message:<br>
+			{{ form.message }}<br><br>
+			<input type="submit" value="Send">
+		</form>
+
+	</body>
+</html>

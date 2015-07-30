@@ -1,0 +1,20 @@
+<html>
+    <body>
+    <h1>Registration</h1>
+    
+    {{form.errros.non_field_errors}}
+
+
+    <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        	{{form.errors.email}}<br />
+            E-mail : {{ form.email }}<br />
+            {{form.errors.password}}<br />
+            Password : {{ form.password }}<br />
+            {{form.errors.image}}<br />
+            Picture : {{ form.image }}<br />
+            <input type="submit" value="register" />
+    </form>
+    
+    </body>
+</html>

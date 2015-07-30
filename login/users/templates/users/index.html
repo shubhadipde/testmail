@@ -1,0 +1,15 @@
+<html>
+    <body>
+    <h1>Login</h1>
+
+    {{form.errros.non_field_errors}}
+    
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+            E-mail : {{ form.email }} {{ form.errors.email }}<br />
+            Password : {{ form.password }} {{ form.errors.password }}<br />
+            <input type="submit" value="login" />
+    </form>
+    
+    </body>
+</html>
